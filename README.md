@@ -52,7 +52,9 @@ project/
 │   └── wsgi.py
 │
 ├── manage.py
-└── README.md
+├── README.md
+└── requirements.txt
+
 ```
 
 ---
