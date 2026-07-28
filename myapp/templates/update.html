@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+
+    <link rel="stylesheet" href="{% static 'css/add_student_html.css' %}">
+</head>
+
+<body>
+     
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Update Student</h2>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="input-group">
+                    <label>Name</label>
+                    <input type="text" name="name" value="{{ student.name }}" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" value="{{ student.email }}" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Age</label>
+                    <input type="number" name="age" value="{{ student.age }}" required>
+                </div>
+
+                <div class="input-group">
+    <label>Department</label>
+
+    <select name="department" required>
+        {% for department in departments %}
+            <option value="{{ department.id }}"
+                {% if department.id == student.department.id %}
+                    selected
+                {% endif %}>
+                {{ department.department_name }}
+            </option>
+        {% endfor %}
+    </select>
+</div>
+                <div class="buttons">
+                    <button type="submit" class="save-btn">
+                        Update Student
+                    </button>
+
+                    <a href="{% url 'students' %}" class="cancel-btn">
+                        Cancel
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
