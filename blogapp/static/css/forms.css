@@ -1,0 +1,197 @@
+/* ===============================
+        FORMS
+================================ */
+
+
+
+.form-section{
+
+
+    min-height:80vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+}
+
+
+
+.form-card{
+
+
+    background:white;
+
+    width:100%;
+
+    max-width:550px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.12);
+
+
+}
+
+
+
+.form-title{
+
+
+    text-align:center;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+/* Inputs */
+
+
+.form-control{
+
+
+    border-radius:15px;
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    transition:.3s;
+
+}
+
+
+
+.form-control:focus{
+
+
+    border-color:#2563eb;
+
+
+    box-shadow:
+
+    0 0 15px rgba(37,99,235,.3);
+
+
+}
+
+
+
+/* Textarea */
+
+
+textarea.form-control{
+
+
+    min-height:150px;
+
+
+}
+
+
+
+/* Submit Button */
+
+
+.submit-btn{
+
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+
+}
+
+
+
+.submit-btn:hover{
+
+
+    background:#1d4ed8;
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 10px 25px rgba(37,99,235,.4);
+
+}
+
+
+
+/* Delete Box */
+
+
+.delete-card{
+
+
+    border-radius:25px;
+
+    padding:40px;
+
+    background:white;
+
+    text-align:center;
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.1);
+
+}
+
+
+
+.delete-btn{
+
+
+    background:#ef4444;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:30px;
+
+}
+
+
+
+.delete-btn:hover{
+
+
+    background:#dc2626;
+
+    transform:scale(1.05);
+
+
+}

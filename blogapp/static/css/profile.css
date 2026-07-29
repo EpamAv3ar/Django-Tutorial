@@ -1,0 +1,189 @@
+/* ===============================
+        PROFILE PAGE
+================================ */
+
+
+.profile-container{
+
+    padding:50px 0;
+
+}
+
+
+/* Profile Card */
+
+.profile-card{
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.1);
+
+}
+
+
+
+/* Profile Image */
+
+.profile-image{
+
+    width:160px;
+
+    height:160px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin:auto;
+
+    border:5px solid #2563eb;
+
+    transition:.4s;
+
+}
+
+
+.profile-image:hover{
+
+    transform:scale(1.1) rotate(5deg);
+
+}
+
+
+
+/* Username */
+
+.profile-name{
+
+    margin-top:20px;
+
+    font-size:32px;
+
+    font-weight:700;
+
+}
+
+
+
+/* Bio */
+
+.profile-bio{
+
+    color:#6b7280;
+
+    margin:15px 0;
+
+}
+
+
+
+/* Statistics */
+
+
+.profile-stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    margin:30px 0;
+
+}
+
+
+
+.stat h3{
+
+    color:#2563eb;
+
+    font-weight:700;
+
+}
+
+
+
+.stat p{
+
+    color:#6b7280;
+
+}
+
+
+
+/* Profile Buttons */
+
+
+.profile-actions a{
+
+
+    margin:10px;
+
+    border-radius:30px;
+
+    padding:12px 25px;
+
+    transition:.3s;
+
+}
+
+
+
+.profile-actions a:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/* User Posts */
+
+
+.profile-post-card{
+
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.1);
+
+    transition:.4s;
+
+}
+
+
+
+.profile-post-card:hover{
+
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.profile-post-card img{
+
+
+    height:220px;
+
+    width:100%;
+
+    object-fit:cover;
+
+}

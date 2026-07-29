@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}
+Create Post
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-header bg-primary text-white text-center py-4">
+
+                    <h2>
+                        <i class="bi bi-pencil-square"></i>
+                        Create New Blog Post
+                    </h2>
+
+                    <p class="mb-0">
+                        Share your thoughts with the world.
+                    </p>
+
+                </div>
+
+                <div class="card-body p-5">
+
+                    <form method="POST" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+
+                                Title
+
+                            </label>
+
+                            <input
+                                type="text"
+                                name="title"
+                                class="form-control form-control-lg"
+                                placeholder="Enter Blog Title"
+                                required>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+
+                                Content
+
+                            </label>
+
+                            <textarea
+                                name="content"
+                                rows="8"
+                                class="form-control"
+                                placeholder="Write your blog here..."
+                                required></textarea>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+
+                                Upload Image
+
+                            </label>
+
+                            <input
+                                type="file"
+                                name="image"
+                                class="form-control">
+
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <a href="{% url 'home' %}"
+                               class="btn btn-secondary">
+
+                                <i class="bi bi-arrow-left"></i>
+
+                                Back
+
+                            </a>
+
+                            <button
+                                type="submit"
+                                class="btn btn-success">
+
+                                <i class="bi bi-cloud-upload"></i>
+
+                                Publish Post
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

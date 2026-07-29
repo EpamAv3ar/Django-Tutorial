@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-9">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                {% if post.image %}
+
+                <img src="{{ post.image.url }}"
+                     class="card-img-top"
+                     style="max-height:500px; object-fit:cover;"
+                     alt="{{ post.title }}">
+
+                {% else %}
+
+                <img src="{% static 'images/default.jpg' %}"
+                     class="card-img-top"
+                     style="max-height:500px; object-fit:cover;"
+                     alt="Default Image">
+
+                {% endif %}
+
+                <div class="card-body p-5">
+
+                    <h1 class="fw-bold mb-3">
+
+                        {{ post.title }}
+
+                    </h1>
+
+                    <div class="mb-4 text-muted">
+
+                        <i class="bi bi-person-circle"></i>
+
+                        <strong>{{ post.author.username }}</strong>
+
+                        &nbsp;&nbsp;
+
+                        <i class="bi bi-calendar-event"></i>
+
+                        {{ post.created_at|date:"d M Y, h:i A" }}
+
+                    </div>
+
+                    <hr>
+
+                    <p class="fs-5 lh-lg">
+
+                        {{ post.content }}
+
+                    </p>
+
+                    <hr class="my-4">
+
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+                        <a href="{% url 'home' %}"
+                           class="btn btn-secondary">
+
+                            <i class="bi bi-arrow-left"></i>
+
+                            Back to Home
+
+                        </a>
+
+                        {% if request.user == post.author %}
+
+                        <div class="mt-2 mt-md-0">
+
+                            <a href="{% url 'update' post.id %}"
+                               class="btn btn-warning me-2">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                                Edit
+
+                            </a>
+
+                            <a href="{% url 'delete' post.id %}"
+                               class="btn btn-danger">
+
+                                <i class="bi bi-trash-fill"></i>
+
+                                Delete
+
+                            </a>
+
+                        </div>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
