@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Profile Page</h1>
+<br>
+<img src="{{ profile.profile_picture.url }}" alt="profile_picture" width="250" height="250"><br>
+<strong>User Name: </strong>{{ profile.user.username }}<br>
+<strong>Email Id: </strong>{{ profile.user.email }}<br>
+{% if profile.bio %}
+    <strong>Bio: </strong> {{ profile.bio }}<br>
+{% endif %}
+<strong>Joined Date: </strong> {{ profile.joined }}<br>
+<br>
+<div>
+    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+    <a href="{% url 'password_change' %}">Change Password</a>
+</div>
+{% endblock %}

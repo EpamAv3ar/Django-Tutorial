@@ -5,3 +5,9 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+
+setTimeout(() => {
+    document.querySelectorAll(".alert").forEach(msg => {
+        msg.remove();
+    });
+}, 3000); // 3 seconds

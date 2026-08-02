@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from ecom_store.models import Profile
 from django.contrib.auth.forms import UserCreationForm
 
+class SignInForm(forms.Form):
+    username = forms.CharField(max_length=100)
+    password = forms.CharField(widget=forms.PasswordInput())
 
 class UserUpdateForm(forms.ModelForm):
     class Meta:
