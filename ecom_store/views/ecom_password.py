@@ -12,6 +12,7 @@ from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
 
 class ChangePassword(PasswordChangeView):
     form = PasswordChangeForm
+    template_name = 'password/password_change.html'
     success_url = reverse_lazy('home')
     # extra_context = {}
 
