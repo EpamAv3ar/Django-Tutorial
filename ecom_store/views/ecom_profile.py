@@ -6,7 +6,7 @@ from ecom_store.forms import UserUpdateForm, ProfileUpdateForm
 
 def user_profile(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
-    return render(request, 'profile.html', {'profile': profile, 'media_url': settings.MEDIA_URL})
+    return render(request, 'profile/profile.html', {'profile': profile, 'media_url': settings.MEDIA_URL})
 
 
 def edit_user_profile(request):
@@ -26,4 +26,4 @@ def edit_user_profile(request):
         "profile_form": profile_form,
         "media_url": settings.MEDIA_URL,
     }
-    return render(request, 'edit_profile.html', context)
+    return render(request, 'profile/edit_profile.html', context)

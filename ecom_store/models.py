@@ -6,6 +6,7 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
 
     class Meta:
+        db_table = 'category'
         verbose_name_plural = 'categories'
 
     def __str__(self):
@@ -18,6 +19,9 @@ class Customer(models.Model):
     phone = models.IntegerField()
     password = models.CharField(max_length=100)
 
+    class Meta:
+        db_table = 'customer'
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
@@ -29,6 +33,10 @@ class Product(models.Model):
     image = models.ImageField(upload_to='products/')
     is_sale = models.BooleanField(default=False)
     sale_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
+    class Meta:
+        db_table = 'product'
+        ordering = ["id"]
 
     def __str__(self):
         return self.name
@@ -43,6 +51,9 @@ class Order(models.Model):
     date = models.DateField(default=datetime.datetime.today)
     status = models.BooleanField(default=False)
 
+    class Meta:
+        db_table = 'order'
+
     def __str__(self):
         return self.product.name
 
@@ -51,6 +62,9 @@ class Profile(models.Model):
     bio = models.CharField(max_length=255)
     profile_picture = models.ImageField(upload_to='profiles/', default='profiles/default.jpg')
     joined = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'profile'
 
     def __str__(self):
         return self.user.username

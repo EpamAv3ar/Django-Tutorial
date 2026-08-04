@@ -1,6 +1,6 @@
 from django.urls import path
 from ecom_store.views.ecom_authentication import register_view, login_view, logout_view
-from ecom_store.views.views import home
+from ecom_store.views.views import home, product_page
 from ecom_store.views.ecom_password import (
     ChangePassword,
     # ChangePasswordDone,
@@ -32,4 +32,7 @@ urlpatterns = [
     # Profile
     path('profile', user_profile, name='profile'),
     path('profile/edit/', edit_user_profile, name='edit_profile'),
+
+    # Products
+    path('product/<int:pk>/', product_page, name='product_page'),
 ]

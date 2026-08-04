@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="py-5">
+    <div class="container">
+        <div class="card shadow-lg border-0">
+            <div class="row g-0">
+
+                <div class="col-md-5">
+                    <img src="{{ product.image.url }}"
+                         class="img-fluid rounded-start w-100"
+                         style="height: 500px; object-fit: cover;"
+                         alt="{{ product.name }}">
+                </div>
+
+                <div class="col-md-7">
+                    <div class="card-body p-5">
+                        <h2 class="fw-bold">{{ product.name }}</h2>
+                        {% if product.is_sale %}
+                            <h4>
+                                <span class="text-muted text-decoration-line-through">
+                                    ₹{{ product.price }}
+                                </span>
+                                <span class="text-danger fw-bold">
+                                    ₹{{ product.sale_price }}
+                                </span>
+                            </h4>
+                        {% else %}
+                            <h4 class="text-primary">
+                                ₹{{ product.price }}
+                            </h4>
+                        {% endif %}
+
+                        <hr>
+
+                        <p class="lead">
+                            {{ product.description }}
+                        </p>
+
+                        <div class="mt-4">
+                            <button class="btn btn-dark btn-lg">
+                                Add to Cart
+                            </button>
+
+                            <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-lg">
+                                Back
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
